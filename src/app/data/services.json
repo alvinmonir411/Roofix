@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Roofing Repair",
+    "desc": "Fix leaks, shingle replacement, and maintain your roof with our expert team.",
+    "img": "/Services/roofing-repair.jpg",
+    "href": "/services/roofing-repair"
+  },
+  {
+    "title": "Gutter Cleaning",
+    "desc": "Unclog gutters, prevent water damage and keep your home safe.",
+    "img": "/Services/gutter-cleaning.avif",
+    "href": "/services/gutter-cleaning"
+  },
+  {
+    "title": "Roof Installation",
+    "desc": "Professional new roof installation or replacement for any home.",
+    "img": "/Services/roof-installation.jpg",
+    "href": "/services/roof-installation"
+  },
+  {
+    "title": "Storm Damage Repair",
+    "desc": "Emergency repairs after storms with insurance support if needed.",
+    "img": "/Services/storm-damage.jpg",
+    "href": "/services/storm-damage"
+  },
+  {
+    "title": "Roof Inspection & Maintenance",
+    "desc": "Seasonal inspections and preventive maintenance to extend roof life.",
+    "img": "/Services/roof-inspection.jpg",
+    "href": "/services/roof-inspection"
+  },
+  {
+    "title": "Commercial Roofing",
+    "desc": "Large-scale commercial roofing projects for businesses and warehouses.",
+    "img": "/Services/commercial-roofing.jpg",
+    "href": "/services/commercial-roofing"
+  }
+]

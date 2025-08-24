@@ -38,13 +38,13 @@ export default function Hero() {
           {/* বাটনগুলোর মধ্যে গ্যাপ বাড়ানো হয়েছে */}
           <Link
             href="tel:+8801979915165"
-            className="px-8 py-4 bg-yellow-500 text-gray-900 font-bold rounded-full shadow-xl hover:bg-yellow-600 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-lg" // আরও বড়, বোল্ড, rounded-full, শক্তিশালী শ্যাডো, স্কেল ইফেক্ট
+            className="px-8 py-4 bg-yellow-500 text-gray-900 font-bold rounded-full shadow-xl hover:bg-yellow-600 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-lg" 
           >
             <PhoneCall size={20} /> Call Now
           </Link>
           <Link
             href="#quote"
-            className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-700 hover:border-white transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-lg" // ২ পিক্সেল বর্ডার, rounded-full, স্কেল ইফেক্ট, হোভারে ব্যাকগ্রাউন্ড সাদা ও টেক্সট ব্লু
+            className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-700 hover:border-white transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-lg" 
           >
             <FileText size={20} /> Get Free Quote
           </Link>
