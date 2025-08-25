@@ -83,7 +83,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="container mx-auto p-10 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-16 px-4">
+    <section className="container mx-auto dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-4 text-blue-500 bg-clip-text  bg-gradient-to-r from-blue-600 to-blue-500">
           What Our Clients Say
