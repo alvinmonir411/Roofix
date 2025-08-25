@@ -6,7 +6,7 @@ import services from "../data/services";
 
 export default function Services() {
   return (
-    <section className="relative container mx-auto bg-gray-100">
+    <section className="relative container mx-auto ">
       <div className=" sticky top-20 p-6">
         {/* Section Title */}
         <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-4 text-blue-500 bg-clip-text  bg-gradient-to-r from-blue-600 to-blue-500">
@@ -21,13 +21,13 @@ export default function Services() {
         {services.map((service, index) => (
           <div key={index} className="h-screen sticky top-20 z-10">
             {/* Image with fade-in animation */}
-            <div className="w-full h-full relative overflow-hidden">
+            <div className="w-full h-full relative overflow-hidden rounded-4xl">
               <Image
                 src={service.img}
                 alt={`services ${index + 1}`}
                 fill
                 priority
-                className="object-cover rounded-2xl transition-transform duration-700 ease-in-out hover:scale-105"
+                className="object-cover rounded-4xl transition-transform duration-700 ease-in-out hover:scale-105"
               />
               {/* Black overlay */}
               <div className="absolute inset-0 bg-gray-900/70"></div>{" "}

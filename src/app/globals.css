@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "daisyui";
 body {
-  background: hsla(0, 0%, 95%, 0.5);
+  @apply bg-black/2;
 }

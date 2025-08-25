@@ -5,7 +5,7 @@ import { Menu, X, PhoneCall, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [serviceOpen, setServiceOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -25,51 +25,44 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-100">
-      {" "}
-      {/* Added border-b, slightly stronger shadow */}
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 lg:py-3">
-        {" "}
-        {/* Logo */}
         <Link
           href="/"
-          className="text-3xl font-extrabold text-blue-700 tracking-tight"
+          className="text-3xl font-extrabold text-white tracking-tight"
         >
-          {" "}
-          {/* Larger, bolder, darker blue, tracking-tight for modern feel */}
-          Roofix<span className="text-yellow-600">.</span>{" "}
-          {/* Slightly darker yellow for contrast */}
+          Roofix<span className="text-yellow-400">.</span>
         </Link>
-        {/* Desktop Menu (lg and up) */}
-        <nav className="hidden lg:flex space-x-8 text-gray-700 font-medium relative">
-          {navItems.map((item) =>
+
+        {/* Desktop Menu */}
+        <nav className="hidden lg:flex space-x-8 font-medium relative">
+          {navItems.map((item, index) =>
             item.dropdown ? (
-              <div key={item.name} className="relative group">
-                {" "}
-                {/* Added group for better dropdown hover */}
+              <div key={index} className="relative">
                 <button
-                  onClick={() => setServiceOpen(!serviceOpen)}
-                  className="flex items-center gap-1 py-2 text-gray-800 hover:text-blue-700 font-semibold transition-all duration-300 relative group-hover:text-blue-700" // Stronger text, better hover
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === item.name ? null : item.name
+                    )
+                  }
+                  className="flex items-center gap-1 py-2 text-white font-semibold hover:text-yellow-300 transition-all duration-300"
                 >
-                  {item.name}{" "}
+                  {item.name}
                   <ChevronDown
                     size={18}
                     className={`transition-transform duration-300 ${
-                      serviceOpen ? "rotate-180" : ""
+                      openDropdown === item.name ? "rotate-180" : ""
                     }`}
-                  />{" "}
-                  {/* Rotates icon */}
-                  <span className="absolute left-0 bottom-0 h-0.5 bg-blue-700 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>{" "}
-                  {/* Underline effect */}
+                  />
                 </button>
-                {serviceOpen && (
-                  <div className="absolute left-0 mt-3 w-52 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-200 animate-fade-in-down">
-                    {item.dropdown.map((sub) => (
+                {openDropdown === item.name && (
+                  <div className="absolute left-0 mt-3 w-52 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl rounded-lg overflow-hidden border border-transparent">
+                    {item.dropdown.map((sub, i) => (
                       <Link
-                        key={sub.name}
+                        key={i}
                         href={sub.href}
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200" // Increased padding, better hover color
-                        onClick={() => setServiceOpen(false)}
+                        className="block px-4 py-3 text-white hover:text-yellow-300 transition-all duration-200"
+                        onClick={() => setOpenDropdown(null)}
                       >
                         {sub.name}
                       </Link>
@@ -79,17 +72,16 @@ export default function Navbar() {
               </div>
             ) : (
               <Link
-                key={item.name}
+                key={index}
                 href={item.href}
-                className="py-2 text-gray-800 font-semibold hover:text-blue-700 transition-all duration-300 relative group" // Stronger text, better hover
+                className="py-2 text-white font-semibold hover:text-yellow-300 transition-all duration-300 relative"
               >
                 {item.name}
-                <span className="absolute left-0 bottom-0 h-0.5 bg-blue-700 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>{" "}
-                {/* Underline effect */}
               </Link>
             )
           )}
         </nav>
+
         {/* CTA Button */}
         <div className="hidden lg:flex">
           <Link
@@ -100,45 +92,46 @@ export default function Navbar() {
             Free Quote
           </Link>
         </div>
-        {/* Mobile Hamburger (below lg) */}
+
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-all duration-300"
+          className="lg:hidden p-2 rounded-md text-white hover:bg-gray-100 hover:text-blue-600 transition-all duration-300"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
+
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white shadow-xl px-6 py-6 space-y-5 border-t border-gray-100 animate-slide-down">
-          {navItems.map((item) =>
+        <div className="lg:hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl px-6 py-6 space-y-5 border-t border-transparent">
+          {navItems.map((item, index) =>
             item.dropdown ? (
-              <div key={item.name}>
+              <div key={index}>
                 <button
-                  onClick={() => setServiceOpen(!serviceOpen)}
-                  className="flex justify-between w-full py-2 text-lg font-medium text-gray-800 hover:text-blue-700 transition-all duration-200"
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === item.name ? null : item.name
+                    )
+                  }
+                  className="flex justify-between w-full py-2 text-lg font-medium text-white hover:text-yellow-300 transition-all duration-200"
                 >
-                  {item.name}{" "}
+                  {item.name}
                   <ChevronDown
                     size={20}
                     className={`transition-transform duration-300 ${
-                      serviceOpen ? "rotate-180" : ""
+                      openDropdown === item.name ? "rotate-180" : ""
                     }`}
                   />
                 </button>
-                {serviceOpen && (
-                  <div className="ml-4 mt-2 space-y-2 border-l-2 border-blue-100 pl-4 py-2">
-                    {" "}
-                    {/* Indented, border for visual separation */}
-                    {item.dropdown.map((sub) => (
+                {openDropdown === item.name && (
+                  <div className="ml-4 mt-2 space-y-2 pl-4 py-2 border-l-2 border-white">
+                    {item.dropdown.map((sub, i) => (
                       <Link
-                        key={sub.name}
+                        key={i}
                         href={sub.href}
-                        className="block text-gray-700 hover:text-blue-700 transition-all duration-200 text-base"
-                        onClick={() => {
-                          setIsOpen(false);
-                          setServiceOpen(false);
-                        }}
+                        className="block text-white hover:text-yellow-300 transition-all duration-200 text-base"
+                        onClick={() => setIsOpen(false)}
                       >
                         {sub.name}
                       </Link>
@@ -148,9 +141,9 @@ export default function Navbar() {
               </div>
             ) : (
               <Link
-                key={item.name}
+                key={index}
                 href={item.href}
-                className="block py-2 text-lg font-medium text-gray-800 hover:text-blue-700 transition-all duration-200" // Larger text, bolder
+                className="block py-2 text-lg font-medium text-white hover:text-yellow-300 transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -159,7 +152,7 @@ export default function Navbar() {
           )}
           <Link
             href="/contact"
-            className="block bg-blue-600 text-white text-center px-5 py-3 rounded-full shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 font-semibold mt-4" // More padding, stronger shadow, scale effect, top margin
+            className="block bg-blue-600 text-white text-center px-5 py-3 rounded-full shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 font-semibold mt-4"
             onClick={() => setIsOpen(false)}
           >
             Free Quote
