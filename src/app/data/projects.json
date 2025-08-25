@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "title": "Roof Installation - Miami",
+    "category": "Roofing",
+    "heroImage": "/projects/project1.jpeg",
+    "mainImage": "/projects/project1-main.jpeg",
+    "description": "Professional roof installation service in Miami. We ensure durability, quality materials, and timely completion.",
+    "details": [
+      {
+        "title": "Project Overview",
+        "text": "This project involved installing a new roof on a residential home. Materials used include high-quality shingles, underlayment, and flashing to ensure long-lasting protection."
+      },
+      {
+        "title": "Challenges",
+        "text": "Weather delays and steep roof slope presented challenges, but our team handled all issues efficiently without compromising quality."
+      },
+      {
+        "title": "Solution & Outcome",
+        "text": "The roof was completed in 7 days with zero defects. The client was extremely satisfied with the professional workmanship and timely completion."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Gutter Cleaning - Dallas",
+    "category": "Gutter",
+    "heroImage": "/projects/project2.jpeg",
+    "mainImage": "/projects/project2-main.jpeg",
+    "description": "Efficient gutter cleaning services to prevent water damage in Dallas homes.",
+    "details": [
+      {
+        "title": "Project Overview",
+        "text": "We cleared all gutters, inspected downspouts, and ensured proper water flow to prevent any leaks or flooding during rainy season."
+      },
+      {
+        "title": "Client Feedback",
+        "text": "Homeowner appreciated the quick and professional service. No mess was left behind, and gutters were functioning perfectly."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Storm Damage Repair - New York",
+    "category": "Repair",
+    "heroImage": "/projects/project3.jpeg",
+    "mainImage": "/projects/project3-main.jpeg",
+    "description": "Emergency storm damage repair in New York homes and commercial buildings.",
+    "details": [
+      {
+        "title": "Project Overview",
+        "text": "After a severe storm, we repaired broken shingles, damaged gutters, and inspected the roof for potential weak spots."
+      },
+      {
+        "title": "Solution & Outcome",
+        "text": "Repairs were completed within 3 days. The client’s home was fully protected, and minor issues were prevented from becoming major problems."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Roof Replacement - Los Angeles",
+    "category": "Roofing",
+    "heroImage": "/projects/project4.jpg",
+    "mainImage": "/projects/project4-main.jpeg",
+    "description": "Complete roof replacement services for residential and commercial properties in Los Angeles.",
+    "details": [
+      {
+        "title": "Project Overview",
+        "text": "Removed old roofing materials and installed premium shingles with proper ventilation and waterproofing."
+      },
+      {
+        "title": "Challenges",
+        "text": "Tight schedule and hot weather conditions made it challenging, but work was completed on time."
+      },
+      {
+        "title": "Solution & Outcome",
+        "text": "Final roof is durable, weather-resistant, and aesthetically pleasing. Client extremely satisfied."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Commercial Gutter Installation - Chicago",
+    "category": "Gutter",
+    "heroImage": "/projects/project5.jpeg",
+    "mainImage": "/projects/project5-main.jpeg",
+    "description": "Professional gutter installation for commercial buildings to prevent water damage and ensure proper drainage.",
+    "details": [
+      {
+        "title": "Project Overview",
+        "text": "Installed high-capacity gutters and downspouts with reinforced brackets to support heavy rainfall."
+      },
+      {
+        "title": "Client Feedback",
+        "text": "Client appreciated the durability and professional finish. System tested during heavy rain and performed flawlessly."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Emergency Roof Repair - Houston",
+    "category": "Repair",
+    "heroImage": "/projects/project6.jpeg",
+    "mainImage": "/projects/project6-main.jpeg",
+    "description": "24/7 emergency roof repair services in Houston for residential and commercial properties.",
+    "details": [
+      {
+        "title": "Project Overview",
+        "text": "Rapid response team repaired leaks, reinforced weak sections, and replaced damaged shingles."
+      },
+      {
+        "title": "Solution & Outcome",
+        "text": "Completed emergency repairs within 24 hours. Client highly satisfied with fast and effective service."
+      }
+    ]
+  }
+]
