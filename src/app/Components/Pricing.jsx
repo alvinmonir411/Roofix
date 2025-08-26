@@ -1,49 +1,47 @@
 "use client";
 
-import { CheckCircle } from "lucide-react";
-
+import { useState } from "react";
+import { CheckCircle, X } from "lucide-react";
+import plans from "../data/Plans";
+import axios from "axios";
+import { toast } from "react-toastify";
 export default function Pricing() {
-  const plans = [
-    {
-      name: "Basic",
-      price: "$99",
-      duration: "/month",
-      description: "Perfect for small projects and personal use.",
-      features: [
-        "1 Project",
-        "Basic Support",
-        "Standard Materials",
-        "Email Updates",
-      ],
-      highlighted: false,
-    },
-    {
-      name: "Pro",
-      price: "$199",
-      duration: "/month",
-      description: "Ideal for businesses needing more power and support.",
-      features: [
-        "5 Projects",
-        "Priority Support",
-        "Premium Materials",
-        "Detailed Reports",
-      ],
-      highlighted: true,
-    },
-    {
-      name: "Enterprise",
-      price: "$499",
-      duration: "/month",
-      description: "Best for large organizations with advanced needs.",
-      features: [
-        "Unlimited Projects",
-        "Dedicated Manager",
-        "Top-Quality Materials",
-        "24/7 Support",
-      ],
-      highlighted: false,
-    },
-  ];
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [loading, setLoading] = useState(false);
+  const openModal = (planName) => {
+    setSelectedPlan(planName);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedPlan("");
+  };
+
+  const onsubmite = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    // const form = e.target;
+    const Order = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.number.value,
+      address: e.target.adress.value,
+      plan: selectedPlan,
+      createdAt: new Date(),
+    };
+    console.log(Order);
+
+    try {
+      const res = await axios.post(`/api/Order`, Order);
+      console.log(res.data);
+      toast.success("Order submitted successfully!");
+      closeModal();
+    } catch (error) {
+      toast.error("Order submitted falide!");
+    }
+  };
 
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-950">
@@ -55,13 +53,14 @@ export default function Pricing() {
           Choose a plan that fits your needs. No hidden fees. Cancel anytime.
         </p>
 
+        {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`relative rounded-2xl shadow-lg border transition-all duration-300 hover:scale-105 ${
                 plan.highlighted
-                  ? "border-blue-500 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg text-white"
+                  ? "border-blue-500 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white"
                   : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800"
               }`}
             >
@@ -72,7 +71,6 @@ export default function Pricing() {
                 </div>
               )}
 
-              {/* Content */}
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <p
@@ -83,13 +81,11 @@ export default function Pricing() {
                   {plan.description}
                 </p>
 
-                {/* Price */}
                 <div className="text-4xl font-extrabold mb-6">
                   {plan.price}
                   <span className="text-lg font-medium">{plan.duration}</span>
                 </div>
 
-                {/* Features */}
                 <ul className="space-y-3 mb-8 text-left">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3">
@@ -113,6 +109,7 @@ export default function Pricing() {
                 </ul>
 
                 <button
+                  onClick={() => openModal(plan.name)}
                   className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
                     plan.highlighted
                       ? "bg-yellow-400 text-black hover:bg-yellow-300"
@@ -126,6 +123,79 @@ export default function Pricing() {
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl w-full max-w-lg p-8 relative text-white">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-300 hover:text-white transition"
+            >
+              <X size={28} />
+            </button>
+
+            {/* Modal Title */}
+            <h3 className="text-3xl font-extrabold mb-3 text-center">
+              Book <span className="text-yellow-400">{selectedPlan}</span> Plan
+            </h3>
+            <p className="text-gray-200 text-center mb-8">
+              Fill out the form and we’ll contact you shortly.
+            </p>
+            {/* Form */}
+            <form onSubmit={onsubmite} className="space-y-5">
+              {/* Name */}
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <input
+                  type="tel"
+                  name="number"
+                  placeholder="Your Phone"
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+                />
+              </div>
+              {/* adress */}
+              <div>
+                <input
+                  type="text"
+                  name="adress"
+                  placeholder="Your Adress"
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+                />
+              </div>
+              {/* Submit Button */}
+
+              <button
+                disabled={loading}
+                type="submit"
+                className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 hover:scale-105 hover:shadow-lg transition-transform"
+              >
+                {loading ? "Submitting..." : "Submit"}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

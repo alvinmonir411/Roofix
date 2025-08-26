@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import Hero from "./Components/Hero";
 import Navbar from "./Components/Navbar";
 import Pricing from "./Components/Pricing";
@@ -9,6 +10,7 @@ import WhyChooseUs from "./Components/WhyChooseUs";
 export default function Home() {
   return (
     <div>
+      <ToastContainer />
       <Navbar />
       <Hero />
       <Services />

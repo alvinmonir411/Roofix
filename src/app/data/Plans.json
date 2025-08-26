@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Basic",
+    "price": "$99",
+    "duration": "/month",
+    "description": "Perfect for small projects and personal use.",
+    "features": [
+      "1 Project",
+      "Basic Support",
+      "Standard Materials",
+      "Email Updates"
+    ],
+    "highlighted": false
+  },
+  {
+    "name": "Pro",
+    "price": "$199",
+    "duration": "/month",
+    "description": "Ideal for businesses needing more power and support.",
+    "features": [
+      "5 Projects",
+      "Priority Support",
+      "Premium Materials",
+      "Detailed Reports"
+    ],
+    "highlighted": true
+  },
+  {
+    "name": "Enterprise",
+    "price": "$499",
+    "duration": "/month",
+    "description": "Best for large organizations with advanced needs.",
+    "features": [
+      "Unlimited Projects",
+      "Dedicated Manager",
+      "Top-Quality Materials",
+      "24/7 Support"
+    ],
+    "highlighted": false
+  }
+]
