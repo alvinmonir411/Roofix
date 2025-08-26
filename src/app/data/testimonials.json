@@ -1,0 +1,72 @@
+[
+  {
+    "name": "John Smith",
+    "role": "Homeowner, New York",
+    "image": "https://i.ibb.co/GfmR2b8B/lawyer-2.jpg",
+    "rating": 5,
+    "text": "Roofix did an amazing job on my roof replacement. Professional, fast, and affordable. Highly recommended!"
+  },
+  {
+    "name": "Sarah Johnson",
+    "role": "Business Owner, Chicago",
+    "image": "https://i.ibb.co/5hNYC4H3/lawyer-1.jpg",
+    "rating": 5,
+    "text": "The team repaired storm damage on my commercial property. Excellent service and very responsive!"
+  },
+  {
+    "name": "David Wilson",
+    "role": "Property Manager, Dallas",
+    "image": "https://i.ibb.co/XfG2jH0S/lawyer-3.jpg",
+    "rating": 4,
+    "text": "Great experience with Roofix. The gutter installation was smooth and the crew was very friendly."
+  },
+  {
+    "name": "Emma Brown",
+    "role": "Landlord, Houston",
+    "image": "https://i.ibb.co/pvKTFxd7/lawyer-4.jpg",
+    "rating": 5,
+    "text": "Fast response during emergency! They fixed my leaking roof the same day."
+  },
+  {
+    "name": "Michael Lee",
+    "role": "Homeowner, Miami",
+    "image": "https://i.ibb.co/s9LQGw6B/lawyer-5.jpg",
+    "rating": 5,
+    "text": "Great service and fair pricing. The roof looks brand new now!"
+  },
+  {
+    "name": "Sophia Miller",
+    "role": "Homeowner, Seattle",
+    "image": "https://i.ibb.co/b0DyNgX/lawyer-6.jpg",
+    "rating": 4,
+    "text": "Happy with their service. The crew was professional and cleaned up well."
+  },
+  {
+    "name": "James Anderson",
+    "role": "Contractor, Boston",
+    "image": "https://i.ibb.co/yc5Jkv8V/lawyer-7.jpg",
+    "rating": 5,
+    "text": "Reliable partner for roofing projects. Always on time and on budget."
+  },
+  {
+    "name": "Olivia White",
+    "role": "Designer, LA",
+    "image": "https://i.ibb.co/Kx97tK3m/lawyer-8.jpg",
+    "rating": 5,
+    "text": "Loved the eco-friendly roofing solutions they offered."
+  },
+  {
+    "name": "Robert Green",
+    "role": "Business Owner, Denver",
+    "image": "https://i.ibb.co/3ynyx1fg/lawyer-9.jpg",
+    "rating": 5,
+    "text": "Excellent craftsmanship. Highly recommend Roofix for any roofing job."
+  },
+  {
+    "name": "Isabella Taylor",
+    "role": "Homeowner, Atlanta",
+    "image": "https://i.ibb.co/gLfb1GZF/lawyer-10.jpg",
+    "rating": 4,
+    "text": "They explained everything clearly and delivered on time. Very satisfied."
+  }
+]

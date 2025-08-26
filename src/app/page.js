@@ -1,8 +1,10 @@
 import Hero from "./Components/Hero";
 import Navbar from "./Components/Navbar";
+import Pricing from "./Components/Pricing";
 import Projects from "./Components/Projects";
 import Services from "./Components/Services";
 import Testimonials from "./Components/Testimonials";
+import WhyChooseUs from "./Components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -10,8 +12,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <Testimonials />
       <Projects />
+      <Testimonials />
+      <WhyChooseUs />
+      <Pricing />
     </div>
   );
 }
