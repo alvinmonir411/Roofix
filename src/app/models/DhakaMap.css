@@ -1,0 +1,25 @@
+.map-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.marker-icon {
+  transition: transform 0.2s;
+}
+
+.marker-icon:hover {
+  transform: scale(1.2);
+}
+
+.custom-popup .popup-content {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.custom-popup .popup-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ff4d4f;
+}

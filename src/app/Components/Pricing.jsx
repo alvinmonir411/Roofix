@@ -22,7 +22,7 @@ export default function Pricing() {
   const onsubmite = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // const form = e.target;
+
     const Order = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -36,10 +36,19 @@ export default function Pricing() {
     try {
       const res = await axios.post(`/api/Order`, Order);
       console.log(res.data);
-      toast.success("Order submitted successfully!");
-      closeModal();
+
+      if (res.data.message === "Order already exists") {
+        toast.error("You have already placed an order!");
+        closeModal();
+      } else if (res.data.message === "Order inserted successfully") {
+        toast.success("Order submitted successfully!");
+        closeModal();
+      }
     } catch (error) {
-      toast.error("Order submitted falide!");
+      toast.error("Order submission failed!");
+      closeModal();
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -184,11 +193,15 @@ export default function Pricing() {
                 />
               </div>
               {/* Submit Button */}
-
               <button
                 disabled={loading}
                 type="submit"
-                className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 hover:scale-105 hover:shadow-lg transition-transform"
+                className={`w-full py-4 rounded-xl font-bold text-lg transition-transform 
+    ${
+      loading
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 hover:scale-105 hover:shadow-lg"
+    }`}
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>

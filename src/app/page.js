@@ -6,6 +6,8 @@ import Projects from "./Components/Projects";
 import Services from "./Components/Services";
 import Testimonials from "./Components/Testimonials";
 import WhyChooseUs from "./Components/WhyChooseUs";
+import Contact from "./Components/Contact";
+import BlogSection from "./Components/BlogSection";
 
 export default function Home() {
   return (
@@ -15,9 +17,11 @@ export default function Home() {
       <Hero />
       <Services />
       <Projects />
+      <Pricing />
       <Testimonials />
       <WhyChooseUs />
-      <Pricing />
+      <BlogSection />
+      <Contact />
     </div>
   );
 }

@@ -33,13 +33,13 @@ export default function Testimonials() {
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 5 },
+            1024: { slidesPerView: 4 },
           }}
           className=" p-10"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="w-[300px] h-[280px] mx-auto bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl shadow-lg p-6 flex flex-col justify-between items-start transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-400">
+              <div className="w-[300px] h-[280px] mx-auto bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl  p-6 flex flex-col justify-between items-start transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-400">
                 {/* Profile */}
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-blue-400 shadow-sm">
